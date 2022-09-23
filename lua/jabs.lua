@@ -26,7 +26,7 @@ M.openOptions = {
 require "split"
 
 function M.setup(c)
-    local c = c or {}
+    c = c or {}
 
     -- If preview opts table not provided in config
     if not c.preview then
@@ -166,7 +166,7 @@ function M.updatePos()
         M.win_conf.col = ui.width + M.conf.left_offset - (M.win_conf.width + M.conf.right_offset)
         M.win_conf.row = ui.height + M.conf.top_offset - (M.win_conf.height + M.conf.bottom_offset)
     elseif M.conf.position == "center" then
-        M.win_conf.relative = "win"
+        M.win_conf.relative = M.win_conf.relative
         M.win_conf.col = (ui.width / 2) + M.conf.left_offset - (M.win_conf.width / 2 + M.conf.right_offset)
         M.win_conf.row = (ui.height / 2) + M.conf.top_offset - (M.win_conf.height / 2 + M.conf.bottom_offset)
     end
